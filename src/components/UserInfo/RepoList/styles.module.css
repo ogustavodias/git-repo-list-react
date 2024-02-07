@@ -1,0 +1,46 @@
+.RepoList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.repoName {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.seeOn {
+  background-color: #2f81f7;
+  color: #fff;
+  max-width: max-content;
+  margin: auto;
+  padding: 10px;
+  border-radius: 4px;
+  transition: opacity .3s ease;
+}
+
+.seeOn:hover {
+  opacity: .8;
+}
+
+@media only screen and (max-width: 700px) {
+  .RepoList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .RepoList {
+    grid-template-columns: 1fr;
+  }
+}

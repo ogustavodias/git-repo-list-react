@@ -1,12 +1,16 @@
-import styles from './styles.module.css';
+import RepoList from "./RepoList";
+import styles from "./styles.module.css";
 
-const UserInfo = () => {
+const UserInfo = ({data}) => {
   return (
-    <div className={styles.UserInfo}> 
-      <img src="https://github.com/ogustavodias.png" alt="user avatar" className={styles.avatar}/>
-      <span className={styles.username}>ogustavodias</span>
-    </div>
-  )
-}
+    <section>
+      <div className={styles.UserInfo}>
+        <img src="https://github.com/ogustavodias.png" alt="user avatar" className={styles.avatar}/>
+        <span className={styles.username}>ogustavodias</span>
+      </div>
+      <RepoList data={data}/>
+    </section>
+  );
+};
 
 export default UserInfo;
