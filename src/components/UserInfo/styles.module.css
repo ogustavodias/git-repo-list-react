@@ -1,0 +1,21 @@
+.UserInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #4BB543;
+  padding: 20px 0;
+}
+
+.UserInfo .avatar {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+}
+
+.UserInfo .username {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
