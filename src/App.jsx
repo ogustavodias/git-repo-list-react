@@ -1,31 +1,20 @@
 import { useState } from "react";
-import { useEffect } from "react";
 
 import "./App.css";
 import Search from "./components/Search";
 import UserInfo from "./components/UserInfo";
 
 function App() {
+  const [user, setUser] = useState({username: "user", avatar: "https://via.placeholder.com/170x170"});
   const [data, setData] = useState([]);
-/*   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false); */
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  const getRepositories = async () => {
-    const response = await fetch(
-      "https://api.github.com/users/ogustavodias/repos"
-    );
-    const json = await response.json();
-    setData(json);
-  };
-
-  useEffect(() => {
-    getRepositories();
-  }, []);
 
   return (
     <>
-      <Search />
-      <UserInfo data={data} />
+      <Search setData={setData} setUser={setUser} setLoading={setLoading} setError={setError}/>
+      <UserInfo data={data} user={user} loading={loading} error={error}/>
     </>
   );
 }
